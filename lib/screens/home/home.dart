@@ -26,11 +26,11 @@ class Home extends StatelessWidget {
           children: [
             const SizedBox(height: 40),
             Card(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 15),
               child: Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.all(15),
-                  child: const Text("Hello Sumedha"),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  child: const StyledName("Hello Sumedha"),
               ),
             ),
             const SizedBox(height: 25),
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: Column(
                               children: [
-                                const Text("AI Counselor Chatbot"),
+                                const StyledLabel("AI Counselor Chatbot"),
                                 const SizedBox(height: 5),
                                 Image.asset('assets/img/chatbot.png', width: 80,),
                               ],
@@ -75,7 +75,7 @@ class Home extends StatelessWidget {
                           padding: const EdgeInsets.all(10),
                           child: Column(
                             children: [
-                              const Text("Bedtime Story"),
+                              const StyledLabel("Bedtime Story"),
                               const SizedBox(height: 5),
                               Image.asset('assets/img/sleep.png', width: 80,),
                             ],
