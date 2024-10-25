@@ -41,7 +41,6 @@ class Home extends StatelessWidget {
                     flex: 1,
                     child: StyledTitle('MindMate'), // This assumes StyledTitle is a text widget
                   ),
-
                 ],
               ),
             ),

@@ -35,6 +35,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  just_audio: ^0.9.41
+  firebase_core: ^3.6.0
+  firebase_storage: ^12.3.4
+  firebase_database: ^11.1.4
+  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +69,7 @@ flutter:
      - assets/img/chatbot.png
      - assets/img/sleep.png
      - assets/img/care.png
+     - assets/img/sleeptime.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
