@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1008841530174",
+    "firebase_url": "https://bedtime-stories-80574-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bedtime-stories-80574",
+    "storage_bucket": "bedtime-stories-80574.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008841530174:android:05cd7c5ab75f7ddd7faa6f",
+        "android_client_info": {
+          "package_name": "com.HumanIntelligence.ai_mental_health_chatbot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUU3cLBSeAd7EHl-Y-oDXzeqBaRY1PhWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008841530174:android:dbde10e3416c91b17faa6f",
+        "android_client_info": {
+          "package_name": "com.example.test_audio_player"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUU3cLBSeAd7EHl-Y-oDXzeqBaRY1PhWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
