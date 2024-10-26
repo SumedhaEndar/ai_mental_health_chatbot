@@ -40,6 +40,11 @@ dependencies:
   ollama: ^1.0.4
   flutter_dotenv: ^5.2.1
   http: ^1.2.2
+  just_audio: ^0.9.41
+  firebase_core: ^3.6.0
+  firebase_storage: ^12.3.4
+  firebase_database: ^11.1.4
+  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:
@@ -64,9 +69,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/img/wallpaper.jpg
-    - assets/img/chatbot.png
-    - assets/img/sleep.png
+     - assets/img/wallpaper.jpg
+     - assets/img/chatbot.png
+     - assets/img/sleep.png
+     - assets/img/care.png
+     - assets/img/sleeptime.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
