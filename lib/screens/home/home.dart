@@ -19,6 +19,7 @@ class Home extends StatelessWidget {
   void _signOut(BuildContext context) async {
     try {
       final bool res = await authService.signOut();
+      final bool revokeAuthResult = await authService.cancelAuthorization(); // not sure want or not
       if (res) {
         Navigator.pushReplacement(
           context,
