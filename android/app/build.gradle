@@ -33,11 +33,28 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        release {
+            storeFile file("C:/AppKeyStore/MindMate.keystore") // Path to your keystore file
+            storePassword '123456' // The password you set for the keystore
+            keyAlias 'mindmate' // The alias you set when generating the key
+            keyPassword '123456' // The password for the key alias
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
+            // Enables code shrinking, obfuscation and optimization for release builds
+            minifyEnabled true
+            // Unused resources will be removed.
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -45,3 +62,10 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    // Add dependencies.
+    implementation 'com.huawei.agconnect:agconnect-core:1.9.1.303'
+}
+
+apply plugin: 'com.huawei.agconnect'
