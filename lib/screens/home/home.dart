@@ -1,10 +1,38 @@
 import 'package:ai_mental_health_chatbot/screens/bedtime/bedtime.dart';
 import 'package:ai_mental_health_chatbot/screens/chatbot/chatbot.dart';
+import 'package:ai_mental_health_chatbot/screens/login/login.dart';
 import 'package:ai_mental_health_chatbot/shared/styled_text.dart';
 import 'package:flutter/material.dart';
+import 'package:huawei_account/huawei_account.dart';
+
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({
+    super.key,
+    required this.displayName,
+    required this.authService
+  });
+
+  final String displayName;
+  final AccountAuthService authService;  // Add authService to handle sign-out
+
+  void _signOut(BuildContext context) async {
+    try {
+      final bool res = await authService.signOut();
+      final bool revokeAuthResult = await authService.cancelAuthorization(); // not sure want or not
+      if (res) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const Login()),
+        );
+      }
+    } on Exception catch (e) {
+      // Handle error if sign-out fails
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Sign-out failed: $e'),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +97,7 @@ class Home extends StatelessWidget {
               title: const StyledLabel('Logout'),
               onTap: (){
                 // logout logic
+                _signOut(context);
               },
             )
           ],
@@ -91,7 +120,7 @@ class Home extends StatelessWidget {
               child: Container(
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                  child: const StyledName("Hello Sumedha"),
+                  child: StyledName("Hello $displayName"),
               ),
             ),
             const SizedBox(height: 25),

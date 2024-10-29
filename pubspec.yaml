@@ -45,6 +45,8 @@ dependencies:
   firebase_storage: ^12.3.4
   firebase_database: ^11.1.4
   rxdart: ^0.28.0
+  huawei_account:
+    path: C:\HMS\huawei_account
 
 dev_dependencies:
   flutter_test:
