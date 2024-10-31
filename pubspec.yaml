@@ -47,6 +47,10 @@ dependencies:
   rxdart: ^0.28.0
   huawei_account:
     path: C:\HMS\huawei_account
+  path: ^1.9.0
+  sqflite: ^2.4.0
+  table_calendar: ^3.1.2
+  google_generative_ai: ^0.4.6
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +79,8 @@ flutter:
      - assets/img/chatbot.png
      - assets/img/sleep.png
      - assets/img/care.png
+     - assets/img/exit.png
+     - assets/img/journal.png
      - assets/img/sleeptime.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

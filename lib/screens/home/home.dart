@@ -1,5 +1,6 @@
 import 'package:ai_mental_health_chatbot/screens/bedtime/bedtime.dart';
 import 'package:ai_mental_health_chatbot/screens/chatbot/chatbot.dart';
+import 'package:ai_mental_health_chatbot/screens/journal/journal_calendar.dart';
 import 'package:ai_mental_health_chatbot/screens/login/login.dart';
 import 'package:ai_mental_health_chatbot/shared/styled_text.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class Home extends StatelessWidget {
   void _signOut(BuildContext context) async {
     try {
       final bool res = await authService.signOut();
-      final bool revokeAuthResult = await authService.cancelAuthorization(); // not sure want or not
+      // final bool revokeAuthResult = await authService.cancelAuthorization(); // not sure want or not
       if (res) {
         Navigator.pushReplacement(
           context,
@@ -93,6 +94,16 @@ class Home extends StatelessWidget {
               },
             ),
             ListTile(
+              leading: const Icon(Icons.calendar_month),
+              title: const StyledLabel('Journal'),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> const JournalCalendar()),
+                );
+              },
+            ),
+            ListTile(
               leading: const Icon(Icons.logout),
               title: const StyledLabel('Logout'),
               onTap: (){
@@ -124,58 +135,113 @@ class Home extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context)=> const Chatbot()),
-                        );
-                      },
-                      child: Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Column(
-                              children: [
-                                const StyledLabel("AI Counselor"),
-                                const SizedBox(height: 5),
-                                Image.asset('assets/img/chatbot.png', width: 80,),
-                              ],
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context)=> const Chatbot()),
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Column(
+                                  children: [
+                                    const StyledLabel("AI Counselor"),
+                                    const SizedBox(height: 5),
+                                    Image.asset('assets/img/chatbot.png', width: 80,),
+                                  ],
+                                ),
                             ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 5),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context)=> const Bedtime()),
-                        );
-                      },
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            children: [
-                              const StyledLabel("Bedtime Story"),
-                              const SizedBox(height: 5),
-                              Image.asset('assets/img/sleep.png', width: 80,),
-                            ],
                           ),
                         ),
                       ),
-                    ),
+                      const SizedBox(width: 5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context)=> const Bedtime()),
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  const StyledLabel("Bedtime Story"),
+                                  const SizedBox(height: 5),
+                                  Image.asset('assets/img/sleep.png', width: 80,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: 20,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context)=> const JournalCalendar()),
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  const StyledLabel("Journal"),
+                                  const SizedBox(height: 5),
+                                  Image.asset('assets/img/journal.png', width: 80,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            _signOut(context);
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  const StyledLabel("Logout"),
+                                  const SizedBox(height: 5),
+                                  Image.asset('assets/img/exit.png', width: 80,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             )
           ],
         ),
