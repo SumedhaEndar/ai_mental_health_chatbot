@@ -22,7 +22,9 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   Gemini.init(apiKey: GEMINI_API_KEY,);
+
   runApp( const MaterialApp(
     home: Login(),
   ));

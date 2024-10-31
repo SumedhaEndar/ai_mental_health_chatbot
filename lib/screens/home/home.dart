@@ -135,58 +135,113 @@ class Home extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context)=> const Chatbot()),
-                        );
-                      },
-                      child: Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Column(
-                              children: [
-                                const StyledLabel("AI Counselor"),
-                                const SizedBox(height: 5),
-                                Image.asset('assets/img/chatbot.png', width: 80,),
-                              ],
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context)=> const Chatbot()),
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Column(
+                                  children: [
+                                    const StyledLabel("AI Counselor"),
+                                    const SizedBox(height: 5),
+                                    Image.asset('assets/img/chatbot.png', width: 80,),
+                                  ],
+                                ),
                             ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 5),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context)=> const Bedtime()),
-                        );
-                      },
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            children: [
-                              const StyledLabel("Bedtime Story"),
-                              const SizedBox(height: 5),
-                              Image.asset('assets/img/sleep.png', width: 80,),
-                            ],
                           ),
                         ),
                       ),
-                    ),
+                      const SizedBox(width: 5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context)=> const Bedtime()),
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  const StyledLabel("Bedtime Story"),
+                                  const SizedBox(height: 5),
+                                  Image.asset('assets/img/sleep.png', width: 80,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: 20,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context)=> const JournalCalendar()),
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  const StyledLabel("Journal"),
+                                  const SizedBox(height: 5),
+                                  Image.asset('assets/img/journal.png', width: 80,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            _signOut(context);
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  const StyledLabel("Logout"),
+                                  const SizedBox(height: 5),
+                                  Image.asset('assets/img/exit.png', width: 80,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             )
           ],
         ),

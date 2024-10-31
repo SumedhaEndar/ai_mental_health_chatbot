@@ -1,3 +1,4 @@
+import 'package:ai_mental_health_chatbot/screens/journal/gemini/gemini_services.dart';
 import 'package:ai_mental_health_chatbot/screens/journal/models/journal_model.dart';
 import 'package:ai_mental_health_chatbot/screens/journal/services/database_helper.dart';
 import 'package:ai_mental_health_chatbot/shared/styled_text.dart';
@@ -84,11 +85,21 @@ class _JournalPageState extends State<JournalPage> {
       return;
     }
 
+    // Apply the gemini_services textGenTextOnlyPrompt here and save it to rate
+    int rating;
+    try {
+      // Attempt to get the rating
+      rating = await textGenTextOnlyPrompt(_contentController.text);
+    } catch (e) {
+      // print('Error fetching rating from Gemini API: $e');
+      rating = 5; // Use a default rating if something goes wrong
+    }
+
     // Create a new Journal object with the default rate of 5
     final journal = Journal(
       id: widget.selectedDate.toLocal().toString().split(' ')[0], // Use the date as the ID
       content: _contentController.text, // User input from TextField
-      rate: 10, // Default rate value
+      rate: rating, // Default rate value
     );
 
     // Save the journal to the database

@@ -2,7 +2,7 @@
     package="com.HumanIntelligence.ai_mental_health_chatbot">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="ai_mental_health_chatbot"
+        android:label="MindMate"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

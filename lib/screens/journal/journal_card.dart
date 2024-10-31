@@ -26,7 +26,7 @@ class JournalCard extends StatelessWidget {
                 child: Text(
                   selectedDay != null
                       ? selectedDay!.toLocal().toString().split(' ')[0]
-                      : 'No date selected',
+                      : DateTime.now().toLocal().toString().split(' ')[0],
                   style: const TextStyle(
                       fontSize: 18, fontWeight: FontWeight.bold),
                 ),
