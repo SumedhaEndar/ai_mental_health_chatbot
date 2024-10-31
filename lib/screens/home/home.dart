@@ -1,5 +1,6 @@
 import 'package:ai_mental_health_chatbot/screens/bedtime/bedtime.dart';
 import 'package:ai_mental_health_chatbot/screens/chatbot/chatbot.dart';
+import 'package:ai_mental_health_chatbot/screens/journal/journal_calendar.dart';
 import 'package:ai_mental_health_chatbot/screens/login/login.dart';
 import 'package:ai_mental_health_chatbot/shared/styled_text.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class Home extends StatelessWidget {
   void _signOut(BuildContext context) async {
     try {
       final bool res = await authService.signOut();
-      final bool revokeAuthResult = await authService.cancelAuthorization(); // not sure want or not
+      // final bool revokeAuthResult = await authService.cancelAuthorization(); // not sure want or not
       if (res) {
         Navigator.pushReplacement(
           context,
@@ -89,6 +90,16 @@ class Home extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context)=> const Bedtime()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.calendar_month),
+              title: const StyledLabel('Journal'),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> const JournalCalendar()),
                 );
               },
             ),
