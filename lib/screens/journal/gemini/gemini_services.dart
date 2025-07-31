@@ -7,7 +7,7 @@ Future<int> textGenTextOnlyPrompt(String inputPrompt) async {
   // Initialize the generative model with the specified Gemini version
   final model = GenerativeModel(
     model: 'gemini-1.5-flash',
-    apiKey: "AIzaSyApIRunQh0Mfet_2jGpDh8UIXG9-scAbYw", // Sumedha Gemini API Key
+    apiKey: "Replace with your API Key", // Sumedha Gemini API Key
   );
 
   // Define your prompt
