@@ -53,7 +53,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCUU3cLBSeAd7EHl-Y-oDXzeqBaRY1PhWY',
+    apiKey: 'Replace with your API Key',
     appId: '1:1008841530174:android:05cd7c5ab75f7ddd7faa6f',
     messagingSenderId: '1008841530174',
     projectId: 'bedtime-stories-80574',
